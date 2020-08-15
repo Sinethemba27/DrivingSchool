@@ -1,0 +1,30 @@
+﻿@model IEnumerable<LindaniDrivingSchool.Models.BookingPackage>
+
+@{
+    ViewBag.Title = "PackagesView";
+}
+
+<h2>Available Packages</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="holder.js/100x180/" alt="">
+                    <div class="card-body">
+                        <h4 class="card-title">Package # @Html.DisplayFor(x => item.BokingPackageId)</h4>
+                        <p class="card-text">Price : @Html.DisplayFor(x => item.PackagePrice)</p>
+                        <p class="card-text">
+                            <h5>Short Desciptiom  </h5>
+                            @Html.DisplayFor(x => item.Descrition)
+                        </p>
+                        <p><a class="btn btn-default" onclick="location.href='@Url.Action("Create","Bookings", new { id=item.BokingPackageId})'">Book Package </a></p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>

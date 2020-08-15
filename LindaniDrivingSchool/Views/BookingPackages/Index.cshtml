@@ -1,0 +1,51 @@
+﻿@model IEnumerable<LindaniDrivingSchool.Models.BookingPackage>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Booking Packages</h2>
+
+<p>
+    @Html.ActionLink("Add New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookingType.BktName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descrition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IncludeExtra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PackagePrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingType.BktName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IncludeExtra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PackagePrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BokingPackageId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BokingPackageId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BokingPackageId })
+        </td>
+    </tr>
+}
+
+</table>

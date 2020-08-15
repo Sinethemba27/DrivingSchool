@@ -40,7 +40,5 @@ namespace LindaniDrivingSchool.Models
         public virtual DbSet<Transmission> Transmissions { get; set; }
 
         public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.CarHiring> CarHirings { get; set; }
-
-        public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.Customer> Customers { get; set; }
     }
 }
