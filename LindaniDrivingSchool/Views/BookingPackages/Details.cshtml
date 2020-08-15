@@ -1,0 +1,50 @@
+﻿@model LindaniDrivingSchool.Models.BookingPackage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BookingPackage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingType.BktName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookingType.BktName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IncludeExtra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IncludeExtra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PackagePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PackagePrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BokingPackageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
