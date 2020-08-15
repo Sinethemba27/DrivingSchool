@@ -1,0 +1,241 @@
+﻿@model LindaniDrivingSchool.Models.CarHiring
+    @using LindaniDrivingSchool.Logic
+@{
+    ViewBag.Title = "ReturnVehicle";
+    BusinessLogic businessLogic = new BusinessLogic();
+}
+
+<h2>Return Vehicle</h2>
+
+@using (Html.BeginForm("Edit", "CarHirings", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Booking</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.BookingId)
+    <div class="form-group">
+        @Html.LabelFor(model => model.MilageIn, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MilageIn, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MilageIn, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.PickUpDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*<input type="text" id="PickUpDate" readonly value="@ViewBag.pick" class="form-control" name="PickUpDate" />*@
+            @Html.TextBoxFor(model => model.PickUpDate, "{0:d}")
+            @Html.ValidationMessageFor(model => model.MilageIn, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.ReturnDate, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.ReturnDate, "{0:d}")
+            @*<input type="text" id="ReturnDate" readonly value="@ViewBag.retur" class="form-control" name="ReturnDate" />*@
+            @Html.ValidationMessageFor(model => model.MilageIn, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.CarId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("CarId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CarId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.userId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.userID" class="form-control" name="userId" />
+            @Html.ValidationMessageFor(model => model.userId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.status" class="form-control" name="status" />
+
+            @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.Deposit, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.Deposit" class="form-control" name="Deposit" />
+
+            @Html.ValidationMessageFor(model => model.Deposit, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.BasicPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.BasicPrice" class="form-control" name="BasicPrice" />
+
+            @Html.ValidationMessageFor(model => model.BasicPrice, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.numOfDays, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.numOfDays" class="form-control" name="numOfDays" />
+
+            @Html.ValidationMessageFor(model => model.numOfDays, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.Percentage, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.Percentage" class="form-control" name="Percentage" />
+
+            @Html.ValidationMessageFor(model => model.Percentage, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.CustomerName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.CustomerName" class="form-control" name="CustomerName" />
+
+            @Html.ValidationMessageFor(model => model.CustomerName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group" style="display:none">
+        @Html.LabelFor(model => model.CustomerSurname, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" readonly value="@ViewBag.CustomerSurname" class="form-control" name="CustomerSurname" />
+
+            @Html.ValidationMessageFor(model => model.CustomerSurname, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3>Vehicle Returns</h3>
+    </div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <td>
+                Customer
+            </td>
+
+            <td>
+                @Html.DisplayFor(m => m.CustomerName)
+                @Html.DisplayFor(m => m.CustomerSurname)
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Vehicle
+            </td>
+
+            <td>
+                @Html.DisplayName(Model.car.carMake.CarMakeType)
+                @Html.DisplayName(Model.car.carModel.CarModelType)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Milage Out
+            </td>
+
+            <td>
+                @Html.DisplayFor(m => m.car.CurrentMilage) km
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Milage In
+            </td>
+
+            <td>
+                @Html.DisplayFor(m => m.MilageIn) km
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Basic Cost
+            </td>
+
+            <td>
+                @Html.DisplayName(businessLogic.calcBasicCharge(Model).ToString("R0.00"))
+
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Deposit
+            </td>
+
+            <td>
+                @Html.DisplayName(Model.calcDeposite().ToString())
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Daily Cost
+            </td>
+
+            <td>
+                @Html.DisplayFor(m => m.car.Cost_Per_Day)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Days
+            </td>
+
+            <td>
+                @Html.DisplayName(businessLogic.CalcNum_of_Days(Model).ToString())
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Extra Km Cost
+            </td>
+
+            <td>
+                @Html.DisplayName(businessLogic.calcExtraKMCost(Model).ToString("R0.00"))
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Kilometre Rate
+            </td>
+
+            <td>
+                @Html.DisplayName(businessLogic.calcKMRate(Model).ToString("R0.00"))
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Used Km
+            </td>
+
+            <td>
+                @Html.DisplayName(businessLogic.calcUsedKM(Model.CarId,Model.MilageIn).ToString()) KM
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Total
+            </td>
+
+            <td>
+                <strong>@Html.DisplayName(businessLogic.calcGrandTotal(Model).ToString("R0.00"))</strong>
+            </td>
+        </tr>
+    </table>
+    @Html.ActionLink("Done", "AvailableCar", new { id = Model.BookingId }, new { @class = "btn btn-success" })
+</div>

@@ -38,6 +38,8 @@ namespace LindaniDrivingSchool.Models
         public int CurrentMilage { get; set; }
         public int numTimesBooked { get; set; }
         public string Description { get; set; }
+        public string Status { get; set; } = "Available";
+
         public byte[] Image { get; set; }
         public string ImageType { get; set; }
     }

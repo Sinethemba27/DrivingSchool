@@ -3,29 +3,27 @@
     ViewBag.Title = "ConfrimHire";
 }
 
-<h2>Confrim Hire</h2>
-
 <br />
 <br />
 <div class="panel panel-info">
     <div class="panel-heading">
-        <h3>Confirm Application</h3>
+        <h3>Confirm Car Hire</h3>
     </div>
     <img src="@Url.Action("RenderImage", "Cars", new { id = Model.CarId})" width="300" height="250" />
     <div class="panel-body" style="height:25em;overflow-y:auto">
         <h4>Please Confirm Correctness of details.</h4>
         <table class="table table-bordered table-striped">
-            @*<tr>
-                <td>
-                    Client
-                </td>
+            <tr>
+            <td>
+                Customer
+            </td>
 
-                <td>
+            <td>
 
-                    @Html.DisplayName(Model.getLastName())
-                    @Html.DisplayName(Model.getFirstName())
-                </td>
-            </tr>*@
+                @Html.DisplayFor(m => m.CustomerName)
+                @Html.DisplayFor(m => m.CustomerSurname)
+            </td>
+        </tr>
 
             <tr>
                 <td>
@@ -39,7 +37,7 @@
             </tr>
             <tr>
                 <td>
-                    Milage
+                    Current Milage
                 </td>
 
                 <td>
@@ -61,7 +59,16 @@
                 </td>
 
                 <td>
-                    @Html.DisplayFor(m => m.BasicPrice)
+                   R @Html.DisplayFor(m => m.BasicPrice)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Insurance Fee
+                </td>
+
+                <td>
+                   R @Html.DisplayFor(m => m.car.insurance.InsuranceFee)
                 </td>
             </tr>
             <tr>
@@ -70,7 +77,7 @@
                 </td>
 
                 <td>
-                    @Html.DisplayFor(m => m.Deposit)
+                   R @Html.DisplayFor(m => m.Deposit)
                 </td>
             </tr>
             <tr>
@@ -89,7 +96,7 @@
     </div>
 </div>
 <p>
-    @Html.ActionLink("Confirm", "ThankYouPage", "Home", new { id = Model.BookingId }, new { @class = "btn btn-success" })
+    @Html.ActionLink("Confirm and Accept payment", "OnceOff", "CarHirings", new { id = Model.BookingId }, new { @class = "btn btn-success" })
     @*<a href="~/Home/ThankYouPage" class="btn btn-success">Confirm</a>|*@
-    <a href="~/Bookings/Edit/@Model.BookingId" class="btn btn-primary">Edit Details</a>
+    <a href="~/CarHirings/Edit/@Model.BookingId" class="btn btn-primary">Edit Details</a>
 </p>

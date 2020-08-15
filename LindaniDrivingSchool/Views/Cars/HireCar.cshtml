@@ -39,7 +39,7 @@
                         </div>
                         <!--second  flex child-->
                         <h5 class="car-value align-self-centre py-2 px3">
-                          
+
                             <span class="car-price">@Html.DisplayFor(modelItem => item.Cost_Per_Day)</span>
                         </h5>
                     </div>
@@ -49,8 +49,17 @@
                     @*<p><span><i class="fas fa-car"></i></span>@Html.DisplayFor(modelItem => item..CategoryName)</p>*@
                     <p><span><i class="fas fa-cogs"></i></span>@Html.DisplayFor(modelItem => item.transmission.TransmissionType)</p>
                     <p><span><i class="fas fa-gas-pump"></i></span>@Html.DisplayFor(modelItem => item.fuel.FuelType)</p>
+                    <p><span><i class="fas fa-gas-pump"></i></span>@Html.DisplayFor(modelItem => item.Status)</p>
                 </div>
-                @Html.ActionLink("Hire Now", "Create", "CarHirings", new { id = item.CarId }, new { @class = "btn btn-info" })
+                @if (item.Status == "Not Available")
+                {
+                    @Html.ActionLink("Hire Now", "Create", "CarHirings", new { id = item.CarId }, new { @class = "btn btn-info", disabled="disabled"  })
+
+                }
+                else
+                {
+                    @Html.ActionLink("Hire Now", "Create", "CarHirings", new { id = item.CarId }, new { @class = "btn btn-info" })
+                }
             </div>
         </div>
     }

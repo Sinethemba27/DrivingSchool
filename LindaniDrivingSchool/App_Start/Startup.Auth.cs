@@ -90,7 +90,6 @@ namespace LindaniDrivingSchool
                     FirstName = "Administrator",
                     LastName = "Admin",
                     Email = "Admin@gmail.com",
-                    Status = "Approved"
 
                 };
                 context.Admins.Add(newAdmin);
@@ -109,22 +108,10 @@ namespace LindaniDrivingSchool
 
 
             //creating other roles
-            if (!roleManager.RoleExists("Landlord"))
+            if (!roleManager.RoleExists("Customer"))
             {
                 var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Landlord";
-                roleManager.Create(role);
-            }
-            if (!roleManager.RoleExists("Manager"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Manager";
-                roleManager.Create(role);
-            }
-            if (!roleManager.RoleExists("Tenant"))
-            {
-                var role = new Microsoft.AspNet.Identity.EntityFramework.IdentityRole();
-                role.Name = "Tenant";
+                role.Name = "Customer";
                 roleManager.Create(role);
             }
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 
 namespace LindaniDrivingSchool.Models
@@ -22,30 +23,41 @@ namespace LindaniDrivingSchool.Models
         [Display(Name = "Return Date")]
         public DateTime ReturnDate { get; set; }
         public decimal Percentage { get; set; }
+        [DataType(DataType.Currency)]
         public decimal BasicPrice { get; set; }
+        [DataType(DataType.Currency)]
+
         public double price { get; set; }
         public int ReturnId { get; set; }
         [Display(Name = "Booking Cost")]
-        public double Booking_Cost { get; set; }
+        [DataType(DataType.Currency)]
+        public Decimal Booking_Cost { get; set; }
+        [DataType(DataType.Currency)]
         public decimal Deposit { get; set; }
         public int numOfDays { get; set; }
         public string status { get; set; } = "Pending";
+        public string CustomerName { get; set; }
+        public string CustomerSurname { get; set; }
         public int CarId { get; set; }
         public virtual Car car { get; set; }
         [DisplayFormat(ApplyFormatInEditMode = true)]
         public double MilageIn { get; set; }
         public double MilageOut { get; set; }
         ApplicationDbContext db = new ApplicationDbContext();
-        public decimal getInsuranceFee(int insureId)
+        public decimal getInsuranceFee()
         {
+            var idInsure =(from c in db.Cars
+                           where c.CarId == CarId
+                           select c.InsuranceId).FirstOrDefault();
+
             var inFee = (from c in db.Insurances
-                         where c.InsuranceId == insureId
+                         where c.InsuranceId == idInsure
                          select c.InsuranceFee).FirstOrDefault();
             return inFee;
         }
-        public decimal calcDeposite(int insureId)
+        public decimal calcDeposite()
         {
-            return BasicPrice + getInsuranceFee(insureId);
+            return BasicPrice + getInsuranceFee();
         }
     }
 }

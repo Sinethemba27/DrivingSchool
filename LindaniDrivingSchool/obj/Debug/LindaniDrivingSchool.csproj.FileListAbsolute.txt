@@ -105,6 +105,8 @@ C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\bin\Mic
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csproj.CopyComplete
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.dll
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.pdb
-C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csprojAssemblyReference.cache
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.Migrations.InitialCreate.resources
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csproj.GenerateResource.cache
+C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\bin\PayFast.AspNet.dll
+C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\bin\PayFast.dll
+C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\bin\PayFast.xml

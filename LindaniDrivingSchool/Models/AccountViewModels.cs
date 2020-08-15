@@ -72,9 +72,6 @@ namespace LindaniDrivingSchool.Models
         [RegularExpression(pattern: @"^[a-zA-Z''-'\s]{1,40}$", ErrorMessage = "Numbers and special characters are not allowed.")]
         [StringLength(maximumLength: 228, ErrorMessage = "Last Name must be atleast 3 characters long", MinimumLength = 3)]
         public string LastName { get; set; }
-        [Display(Name = "Identity Number")]
-        [MaxLength(13), MinLength(13)]
-        public string IDNumber { get; set; }
         public string Gender { get; set; }
         public string Phone { get; set; }
         [Required]

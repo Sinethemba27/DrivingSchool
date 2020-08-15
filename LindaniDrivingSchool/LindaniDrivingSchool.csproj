@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PayFast, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayFast.1.0.4\lib\net462\PayFast.dll</HintPath>
+    </Reference>
+    <Reference Include="PayFast.AspNet, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PayFast.AspNet.1.0.4\lib\net46\PayFast.AspNet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -173,6 +179,7 @@
     <Compile Include="Controllers\CarMakesController.cs" />
     <Compile Include="Controllers\CarModelsController.cs" />
     <Compile Include="Controllers\CarsController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\FuelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InsurancesController.cs" />
@@ -182,6 +189,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Logic\BusinessLogic.cs" />
+    <Compile Include="Logic\EmailService.cs" />
     <Compile Include="Migrations\202008151332354_InitialCreate.cs" />
     <Compile Include="Migrations\202008151332354_InitialCreate.Designer.cs">
       <DependentUpon>202008151332354_InitialCreate.cs</DependentUpon>
@@ -194,6 +202,7 @@
     <Compile Include="Models\CarHiring.cs" />
     <Compile Include="Models\CarMake.cs" />
     <Compile Include="Models\CarModel.cs" />
+    <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Fuel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Insurance.cs" />
@@ -366,6 +375,14 @@
     <Content Include="Views\CarHirings\Index.cshtml" />
     <Content Include="Views\CarHirings\ConfrimHire.cshtml" />
     <Content Include="Views\Home\ThankYouPage.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\CarHirings\ConfirmPickUp.cshtml" />
+    <Content Include="Views\CarHirings\MyHirings.cshtml" />
+    <Content Include="Views\CarHirings\ReturnVehicle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

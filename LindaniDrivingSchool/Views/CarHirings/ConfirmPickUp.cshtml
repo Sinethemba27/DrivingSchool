@@ -1,0 +1,104 @@
+﻿@model LindaniDrivingSchool.Models.CarHiring
+
+@{
+    ViewBag.Title = "ConfirmPickUp";
+}
+
+<br />
+<br />
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3>Confirm Pick Up</h3>
+    </div>
+    <img src="@Url.Action("RenderImage", "Cars", new { id = Model.CarId})" width="300" height="250" />
+    <div class="panel-body" style="height:25em;overflow-y:auto">
+        <h4>Please Confirm Correctness of details.</h4>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>
+                    Customer
+                </td>
+
+                <td>
+
+                    @Html.DisplayFor(m => m.CustomerName)
+                    @Html.DisplayFor(m => m.CustomerSurname)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Vehicle
+                </td>
+
+                <td>
+                    @Html.DisplayName(Model.car.carMake.CarMakeType)
+                    @Html.DisplayName(Model.car.carModel.CarModelType)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Current Milage
+                </td>
+
+                <td>
+                    @Html.DisplayFor(m => m.car.CurrentMilage) km
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Free KM
+                </td>
+
+                <td>
+                    @Html.DisplayFor(m => m.car.freeKiloMeters) km
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Basic Cost
+                </td>
+
+                <td>
+                    R @Html.DisplayFor(m => m.BasicPrice)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Insurance Fee
+                </td>
+
+                <td>
+                    R @Html.DisplayFor(m => m.car.insurance.InsuranceFee)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Deposit
+                </td>
+
+                <td>
+                    R @Html.DisplayFor(m => m.Deposit)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Days
+                </td>
+
+                <td>
+                    @Html.DisplayFor(m => m.numOfDays)
+                </td>
+            </tr>
+
+
+
+        </table>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Confirm Pick-Up", "ConfirmCollection", "CarHirings", new { id = Model.BookingId }, new { @class = "btn btn-success" })
+    @*<a href="~/Home/ThankYouPage" class="btn btn-success">Confirm</a>|*@
+    <a href="~/CarHirings/Edit/@Model.BookingId" class="btn btn-primary">Edit Details</a>
+</p>
+
