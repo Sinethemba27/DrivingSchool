@@ -1,0 +1,114 @@
+﻿@model LindaniDrivingSchool.Models.CarHiring
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarHiring</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.car.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.car.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.userId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PickUpDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PickUpDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percentage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BasicPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BasicPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReturnId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReturnId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booking_Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booking_Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MilageIn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MilageIn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MilageOut)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MilageOut)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BookingId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

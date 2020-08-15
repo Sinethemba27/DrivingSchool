@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LindaniDrivingSchool.Models.CarGroup>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarGroupType)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarGroupType)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CarGroupId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.CarGroupId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CarGroupId })
+        </td>
+    </tr>
+}
+
+</table>

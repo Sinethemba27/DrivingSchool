@@ -1,0 +1,105 @@
+﻿@model IEnumerable<LindaniDrivingSchool.Models.Car>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.carGroup.CarGroupType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carMake.CarMakeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.carModel.CarModelType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fuel.FuelType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.insurance.InsuranceType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.transmission.TransmissionType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost_Per_Day)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KilometerRate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.freeKiloMeters)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentMilage)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.numTimesBooked)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.carGroup.CarGroupType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.carMake.CarMakeType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.carModel.CarModelType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.fuel.FuelType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.insurance.InsuranceType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.transmission.TransmissionType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Cost_Per_Day)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.KilometerRate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.freeKiloMeters)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CurrentMilage)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.numTimesBooked)
+    </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        <img src="@Url.Action("RenderImage", "Cars", new { id = item.CarId})" width="50" height="60" />
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CarId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CarId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CarId })
+    </td>
+</tr>
+}
+
+</table>

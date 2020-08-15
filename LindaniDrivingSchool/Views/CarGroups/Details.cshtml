@@ -1,0 +1,26 @@
+﻿@model LindaniDrivingSchool.Models.CarGroup
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CarGroup</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CarGroupType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarGroupType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CarGroupId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<LindaniDrivingSchool.Models.CarMake>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CarMakeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.CarMakeType)
+    </td>
+    <td>
+        <img src="@Url.Action("RenderImage", "CarMakes", new { id = item.CarMakeId})" width="50" height="60" />
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.CarMakeId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.CarMakeId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.CarMakeId })
+    </td>
+</tr>
+}
+
+</table>

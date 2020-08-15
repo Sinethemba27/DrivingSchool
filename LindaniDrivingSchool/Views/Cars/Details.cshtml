@@ -1,0 +1,130 @@
+﻿@model LindaniDrivingSchool.Models.Car
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Car</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.carGroup.CarGroupType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carGroup.CarGroupType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carMake.CarMakeType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carMake.CarMakeType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.carModel.CarModelType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.carModel.CarModelType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fuel.FuelType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fuel.FuelType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.insurance.InsuranceType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.insurance.InsuranceType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.transmission.TransmissionType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.transmission.TransmissionType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost_Per_Day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost_Per_Day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KilometerRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KilometerRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.freeKiloMeters)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.freeKiloMeters)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentMilage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentMilage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numTimesBooked)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numTimesBooked)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CarId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
