@@ -217,3 +217,4 @@ C:\Users\Lungelo\Source\Repos\DrivigSchool\LindaniDrivingSchool\bin\Microsoft.Ow
 C:\Users\Lungelo\Source\Repos\DrivigSchool\LindaniDrivingSchool\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Lungelo\Source\Repos\DrivigSchool\LindaniDrivingSchool\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\Lungelo\Source\Repos\DrivigSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csproj.CopyComplete
+C:\Users\Lungelo\Source\Repos\DrivigSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csprojAssemblyReference.cache

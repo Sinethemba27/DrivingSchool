@@ -21,6 +21,15 @@ namespace LindaniDrivingSchool.Controllers
             return View(bookingPackages.ToList());
         }
 
+        public ActionResult PackagesView(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            return View(db.BookingPackages.Where(x => x.BookingTypeId == id).ToList());
+        }
+
         // GET: BookingPackages/Details/5
         public ActionResult Details(int? id)
         {

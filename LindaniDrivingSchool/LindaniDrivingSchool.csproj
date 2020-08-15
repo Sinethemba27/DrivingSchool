@@ -169,6 +169,8 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BookingPackagesController.cs" />
+    <Compile Include="Controllers\BookingsController.cs" />
+    <Compile Include="Controllers\BookingTypesController.cs" />
     <Compile Include="Controllers\CarGroupsController.cs" />
     <Compile Include="Controllers\CarHiringsController.cs" />
     <Compile Include="Controllers\CarMakesController.cs" />
@@ -192,6 +194,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\BookingPackage.cs" />
     <Compile Include="Models\BookingType.cs" />
     <Compile Include="Models\Car.cs" />
@@ -209,6 +212,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-LindaniDrivingSchool-20200814092124.mdf" />
+    <Content Include="App_Data\aspnet-LindaniDrivingSchool-20200814092124_log.ldf">
+      <DependentUpon>aspnet-LindaniDrivingSchool-20200814092124.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -382,10 +389,20 @@
     <Content Include="Views\BookingPackages\Details.cshtml" />
     <Content Include="Views\BookingPackages\Edit.cshtml" />
     <Content Include="Views\BookingPackages\Index.cshtml" />
+    <Content Include="Views\BookingTypes\Create.cshtml" />
+    <Content Include="Views\BookingTypes\Delete.cshtml" />
+    <Content Include="Views\BookingTypes\Details.cshtml" />
+    <Content Include="Views\BookingTypes\Edit.cshtml" />
+    <Content Include="Views\BookingTypes\Index.cshtml" />
+    <Content Include="Views\BookingTypes\PackageView.cshtml" />
+    <Content Include="Views\BookingPackages\PackagesView.cshtml" />
+    <Content Include="Views\Bookings\Create.cshtml" />
+    <Content Include="Views\Bookings\Delete.cshtml" />
+    <Content Include="Views\Bookings\Details.cshtml" />
+    <Content Include="Views\Bookings\Edit.cshtml" />
+    <Content Include="Views\Bookings\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

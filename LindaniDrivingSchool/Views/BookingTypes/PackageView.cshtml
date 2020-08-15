@@ -1,0 +1,27 @@
+﻿@model IEnumerable<LindaniDrivingSchool.Models.BookingType>
+
+@{
+    ViewBag.Title = "PackageView";
+}
+
+<h2>Booking Type View</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach(var item in Model)
+        {
+            <div class="col-md-6">
+                <div class="card">
+                    @*<img class="card-img-top" src="holder.js/100x180/" alt="">*@
+                    <div class="card-body">
+                        <h4 class="card-title">@Html.DisplayFor(modelItem => item.BktName)</h4>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.ShortDescription)</p>
+                        <p><a class="btn btn-default" onclick="location.href='@Url.Action("PackagesView","BookingPackages", new { id=item.BookingTypeId})'">Go To Packages &raquo;</a></p>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+

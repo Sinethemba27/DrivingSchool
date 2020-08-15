@@ -46,5 +46,7 @@ namespace LindaniDrivingSchool.Models
         public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.BookingPackage> BookingPackages { get; set; }
 
         public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.BookingType> BookingTypes { get; set; }
+
+        public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.Booking> Bookings { get; set; }
     }
 }
