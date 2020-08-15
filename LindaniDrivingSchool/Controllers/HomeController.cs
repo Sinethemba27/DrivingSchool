@@ -26,5 +26,10 @@ namespace LindaniDrivingSchool.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult ThankYouPage()
+        {
+            return View();
+        }
     }
 }
