@@ -50,7 +50,7 @@
                     <p><span><i class="fas fa-cogs"></i></span>@Html.DisplayFor(modelItem => item.transmission.TransmissionType)</p>
                     <p><span><i class="fas fa-gas-pump"></i></span>@Html.DisplayFor(modelItem => item.fuel.FuelType)</p>
                 </div>
-                @Html.ActionLink("Hire Now", "Create", "Bookings", new { id = item.CarId }, new { @class = "btn btn-info" })
+                @Html.ActionLink("Hire Now", "Create", "CarHirings", new { id = item.CarId }, new { @class = "btn btn-info" })
             </div>
         </div>
     }

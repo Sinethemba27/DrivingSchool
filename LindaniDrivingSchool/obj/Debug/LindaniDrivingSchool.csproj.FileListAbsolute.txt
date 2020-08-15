@@ -106,3 +106,5 @@ C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Deb
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.dll
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.pdb
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csprojAssemblyReference.cache
+C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.Migrations.InitialCreate.resources
+C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csproj.GenerateResource.cache
