@@ -28,13 +28,28 @@
 
                     @if (User.IsInRole("Admin"))
                     {
-                        <li>@Html.ActionLink("Car Category", "Index", "CarGroups")</li>
-                        <li>@Html.ActionLink("Car Make", "Index", "CarMakes")</li>
-                        <li>@Html.ActionLink("Car Model", "Index", "CarModels")</li>
-                        <li>@Html.ActionLink("Fuel", "Index", "Fuels")</li>
-                        <li>@Html.ActionLink("Insurance", "Index", "Insurances")</li>
-                        <li>@Html.ActionLink("Transimission", "Index", "Transmissions")</li>
-                        <li>@Html.ActionLink("Car", "Index", "Cars")</li>
+
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Manage Car Booking<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Car Category", "Index", "CarGroups")</li>
+                                <li>@Html.ActionLink("Car Make", "Index", "CarMakes")</li>
+                                <li>@Html.ActionLink("Car Model", "Index", "CarModels")</li>
+                                <li>@Html.ActionLink("Fuel", "Index", "Fuels")</li>
+                                <li>@Html.ActionLink("Insurance", "Index", "Insurances")</li>
+                                <li>@Html.ActionLink("Transimission", "Index", "Transmissions")</li>
+                                <li>@Html.ActionLink("Car", "Index", "Cars")</li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Manage Driving School<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>@Html.ActionLink("Time Slots", "Index", "TimeSlots")</li>
+                                @*<li>@Html.ActionLink("Register Employees", "RegisterEmployee", "Account")</li>*@
+                            </ul>
+                        </li>
                     }
                     else if (User.IsInRole(""))
                     {

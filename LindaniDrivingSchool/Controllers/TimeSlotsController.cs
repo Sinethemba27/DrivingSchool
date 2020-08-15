@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using LindaniDrivingSchool.Logic;
 using LindaniDrivingSchool.Models;
 
 namespace LindaniDrivingSchool.Controllers
@@ -50,11 +51,19 @@ namespace LindaniDrivingSchool.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                // TODO Check if time slot exists
-                db.TimeSlots.Add(timeSlots);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (BookingLogic.CheckITimeSlot(timeSlots) == false)
+                {
+                    // TODO Check if time slot exists
+                    db.TimeSlots.Add(timeSlots);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "You can not add the same slot more than once");
+                    return View(timeSlots);
+                }
+               
             }
 
             return View(timeSlots);
