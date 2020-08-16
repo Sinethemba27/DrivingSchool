@@ -225,6 +225,7 @@
     <Content Include="App_Data\aspnet-LindaniDrivingSchool-20200814092124_log.ldf">
       <DependentUpon>aspnet-LindaniDrivingSchool-20200814092124.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bootstrap-sortable.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -295,6 +296,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap-sortable.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\jquery-ui-1.12.1.custom\package.json" />
@@ -311,6 +313,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\moment-with-locales.js" />
+    <Content Include="Scripts\moment-with-locales.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -388,10 +394,40 @@
     <Content Include="Views\CarHirings\Index.cshtml" />
     <Content Include="Views\CarHirings\ConfrimHire.cshtml" />
     <Content Include="Views\Home\ThankYouPage.cshtml" />
+    <Content Include="Views\BookingPackages\Create.cshtml" />
+    <Content Include="Views\BookingPackages\Delete.cshtml" />
+    <Content Include="Views\BookingPackages\Details.cshtml" />
+    <Content Include="Views\BookingPackages\Edit.cshtml" />
+    <Content Include="Views\BookingPackages\Index.cshtml" />
+    <Content Include="Views\BookingPackages\PackagesView.cshtml" />
+    <Content Include="Views\Bookings\Create.cshtml" />
+    <Content Include="Views\Bookings\Delete.cshtml" />
+    <Content Include="Views\Bookings\Details.cshtml" />
+    <Content Include="Views\Bookings\Edit.cshtml" />
+    <Content Include="Views\Bookings\Index.cshtml" />
+    <Content Include="Views\BookingTypes\Create.cshtml" />
+    <Content Include="Views\BookingTypes\Delete.cshtml" />
+    <Content Include="Views\BookingTypes\Details.cshtml" />
+    <Content Include="Views\BookingTypes\Edit.cshtml" />
+    <Content Include="Views\BookingTypes\Index.cshtml" />
+    <Content Include="Views\BookingTypes\PackageView.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\TimeSlots\Create.cshtml" />
+    <Content Include="Views\TimeSlots\Delete.cshtml" />
+    <Content Include="Views\TimeSlots\Details.cshtml" />
+    <Content Include="Views\TimeSlots\Edit.cshtml" />
+    <Content Include="Views\TimeSlots\Index.cshtml" />
+    <Content Include="Scripts\moment.min.js.map" />
+    <Content Include="Scripts\moment-with-locales.min.js.map" />
+    <Content Include="Views\CarHirings\MyHirings.cshtml" />
+    <Content Include="Views\CarHirings\ReturnVehicle.cshtml" />
+    <Content Include="Views\CarHirings\ConfirmPickUp.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

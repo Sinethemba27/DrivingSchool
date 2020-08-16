@@ -4,84 +4,102 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Car Hiring</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.car.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.userId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PickUpDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReturnDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Percentage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BasicPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Booking_Cost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MilageIn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MilageOut)
-        </th>
-        <th></th>
-    </tr>
+<br />
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.car.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.userId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PickUpDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReturnDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Percentage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BasicPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Booking_Cost)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MilageIn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MilageOut)
-        </td>
-        <td>
-            @Html.ActionLink("Pick Up", "ConfirmPickUp", new { id = item.BookingId }, new { @class = "btn btn-success" })
-            @Html.ActionLink("More", "Details", new { id = item.BookingId }, new { @class = "btn btn-info" }) |
-            @Html.ActionLink("Return", "ReturnVehicle", new { id = item.BookingId }, new { @class = "btn btn-success" })
-        </td>
-    </tr>
-}
+        }
+        else
+        {
+            <thead>
+                <tr class="danger">
+                    <th data-defaultsign="AZ">
+                        @Html.DisplayNameFor(model => model.car.Description)
+                    </th>
+                    <th data-defaultsign="AZ">
+                        Customer
+                    </th>
+                    <th data-defaultsign="month">
+                        @Html.DisplayNameFor(model => model.PickUpDate)
+                    </th>
+                    <th data-defaultsign="month">
+                        @Html.DisplayNameFor(model => model.ReturnDate)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.Percentage)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.BasicPrice)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.Booking_Cost)
+                    </th>
+                    <th data-defaultsign="AZ">
+                        @Html.DisplayNameFor(model => model.status)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.MilageIn)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.MilageOut)
+                    </th>
+                    <th data-defaultsign="_19">
+                        Action
+                    </th>
+                </tr>
+            </thead>
 
-</table>
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.car.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.userId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PickUpDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReturnDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Percentage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BasicPrice)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Booking_Cost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.status)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MilageIn)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MilageOut)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Pick Up", "ConfirmPickUp", new { id = item.BookingId }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("More", "Details", new { id = item.BookingId }, new { @class = "btn btn-info" }) |
+                        @Html.ActionLink("Return", "ReturnVehicle", new { id = item.BookingId }, new { @class = "btn btn-success" })
+                    </td>
+                </tr>
+
+            }
+        }
+    </table>
+</div>
+
+  

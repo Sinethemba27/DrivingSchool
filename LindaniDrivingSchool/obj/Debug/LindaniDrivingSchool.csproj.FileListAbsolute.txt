@@ -110,3 +110,4 @@ C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Deb
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\bin\PayFast.AspNet.dll
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\bin\PayFast.dll
 C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\bin\PayFast.xml
+C:\Users\Sivuyise\source\repos\LindaniDrivingSchool\LindaniDrivingSchool\obj\Debug\LindaniDrivingSchool.csprojAssemblyReference.cache

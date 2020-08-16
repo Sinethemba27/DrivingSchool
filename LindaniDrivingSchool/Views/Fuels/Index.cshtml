@@ -4,30 +4,50 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Fuel</h2>
+<a class="btn btn-default" href="@Url.Action("Create","Fuel")">
+    <i class="fa fa-plus"></i>
+    Add New Fuel
+</a>
+<br />
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FuelType)
-        </th>
-        <th></th>
-    </tr>
+        }
+        else
+        {
+            <thead>
+                <tr class="danger">
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.FuelType)
+                    </th>
+                    <th data-defaultsign="_19">
+                        Action
+                    </th>
+                </tr>
+            </thead>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FuelType)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FuelID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FuelID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FuelID })
-        </td>
-    </tr>
-}
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FuelType)
+                    </td>
+                    <td>
 
-</table>
+                        <a href="@Url.Action("Details", "Fuels", new { id = item.FuelID })" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs"><i class="fa fa-eye"></i></a>
+                        <a href="@Url.Action("Edit", "Fuels", new { id = item.FuelID })" rel="tooltip" title="Edit" class="btn btn-success btn-simple btn-xs"><i class="fa fa-edit"></i></a>
+                        <a href="@Url.Action("Delete", "Fuels", new { id = item.FuelID })" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs"><i class="fa fa-times"></i></a>
+                    </td>
+                </tr>
+
+            }
+        }
+    </table>
+</div>

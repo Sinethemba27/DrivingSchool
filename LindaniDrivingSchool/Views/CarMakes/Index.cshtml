@@ -4,36 +4,57 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+    <h2>Car Make</h2>
+<a class="btn btn-default" href="@Url.Action("Create","CarMakes")">
+    <i class="fa fa-plus"></i>
+    Add New Car Make
+</a>
+<br />
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+        }
+        else
+        {
+            <thead>
+                <tr class="danger">
+                    <th data-defaultsign="AZ">
+                        @Html.DisplayNameFor(model => model.CarMakeType)
+                    </th>
+                    <th data-defaultsign="AZ">
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
+                    <th data-defaultsign="AZ">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+
+            foreach (var item in Model)
+            {
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CarMakeType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th></th>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarMakeType)
+        </td>
+        <td>
+            <img src="@Url.Action("RenderImage", "CarMakes", new { id = item.CarMakeId})" width="50" height="60" />
+        </td>
+        <td>
+
+            <a href="@Url.Action("Details", "Fuels", new { id = item.CarMakeId })" rel="tooltip" title="View" class="btn btn-info btn-simple btn-xs"><i class="fa fa-eye"></i></a>
+            <a href="@Url.Action("Edit", "Fuels", new { id = item.CarMakeId })" rel="tooltip" title="Edit" class="btn btn-success btn-simple btn-xs"><i class="fa fa-edit"></i></a>
+            <a href="@Url.Action("Delete", "Fuels", new { id = item.CarMakeId })" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs"><i class="fa fa-times"></i></a>
+        </td>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.CarMakeType)
-    </td>
-    <td>
-        <img src="@Url.Action("RenderImage", "CarMakes", new { id = item.CarMakeId})" width="50" height="60" />
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.CarMakeId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.CarMakeId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.CarMakeId })
-    </td>
-</tr>
-}
+            }
+        }
+    </table>
+</div>
 
-</table>

@@ -4,102 +4,102 @@
     ViewBag.Title = "MyHirings";
 }
 
-<h2>MyHirings</h2>
+<h2>My Hirings</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<br />
+<br />
+<div class="table-responsive">
+    <table class="table table-bordered table-condensed table-striped table-hover sortable">
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10">No Record's found.</td>
+            </tr>
+
+        }
+        else
+        {
+            <thead>
+                <tr class="danger">
+                    <th data-defaultsign="AZ">
+                        @Html.DisplayNameFor(model => model.car.Description)
+                    </th>
+                    <th data-defaultsign="month">
+                        @Html.DisplayNameFor(model => model.PickUpDate)
+                    </th>
+                    <th data-defaultsign="month">
+                        @Html.DisplayNameFor(model => model.ReturnDate)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.BasicPrice)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.Booking_Cost)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.Deposit)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.numOfDays)
+                    </th>
+                    <th data-defaultsign="AZ">
+                        @Html.DisplayNameFor(model => model.status)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.MilageIn)
+                    </th>
+                    <th data-defaultsign="_19">
+                        @Html.DisplayNameFor(model => model.MilageOut)
+                    </th>
+                    <th data-defaultsign="_19">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+
+            foreach (var item in Model)
+            {
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.car.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PickUpDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReturnDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Percentage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BasicPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Booking_Cost)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Deposit)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.numOfDays)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MilageIn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MilageOut)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th></th>
+        <td>
+            @Html.DisplayFor(modelItem => item.car.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PickUpDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReturnDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BasicPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Booking_Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deposit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numOfDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MilageIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MilageOut)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.BookingId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BookingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
+        </td>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.car.Description)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PickUpDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.ReturnDate)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Percentage)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.BasicPrice)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.price)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Booking_Cost)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Deposit)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.numOfDays)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.status)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MilageIn)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.MilageOut)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.status)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.BookingId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.BookingId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
-    </td>
-</tr>
-}
+            }
+        }
+    </table>
+</div>
 
-</table>
+

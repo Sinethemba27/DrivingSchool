@@ -40,5 +40,15 @@ namespace LindaniDrivingSchool.Models
         public virtual DbSet<Transmission> Transmissions { get; set; }
 
         public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.CarHiring> CarHirings { get; set; }
+
+        public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.TimeSlots> TimeSlots { get; set; }
+
+        public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.BookingPackage> BookingPackages { get; set; }
+
+        public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.BookingType> BookingTypes { get; set; }
+
+        public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.Booking> Bookings { get; set; }
+        public System.Data.Entity.DbSet<LindaniDrivingSchool.Models.Customer> Customers { get; set; }
+
     }
 }

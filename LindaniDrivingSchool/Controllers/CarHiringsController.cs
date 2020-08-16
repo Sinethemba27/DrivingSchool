@@ -138,11 +138,12 @@ namespace LindaniDrivingSchool.Controllers
             var userName = User.Identity.GetUserName();
             carHiring.userId = userName;
             var customers = db.Customers.Where(p => p.Email == userName).FirstOrDefault();
+            var millage = db.Cars.Where(x => x.CarId == carHiring.CarId).FirstOrDefault();
             if (ModelState.IsValid)
             {
                 carHiring.CustomerName = customers.FirstName;
                 carHiring.CustomerSurname = customers.LastName;
-                carHiring.MilageOut = carHiring.car.CurrentMilage;
+                carHiring.MilageOut = millage.CurrentMilage;
                 carHiring.numOfDays = Convert.ToInt32(logic.CalcNum_of_Days(carHiring));
                 carHiring.BasicPrice = logic.calcBasicCharge(carHiring);
                 carHiring.Deposit = carHiring.calcDeposite();
